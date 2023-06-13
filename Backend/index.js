@@ -1,14 +1,8 @@
 const express = require('express');
-const Razorpay = require('razorpay')
 require('dotenv').config();
 const cors = require('cors');
 const app = express();
 const { paymentRoute } = require('./routes/paymentRoutes')
-
-const instance = new Razorpay({
-    key_id: process.env.ROZER_API_KEY,
-    key_secret: process.env.ROZER_API_SECRET,
-});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
